@@ -6,10 +6,7 @@ from datacenter.duration_calculations import format_duration, get_duration, is_v
 
 def passcard_info_view(request, passcode):
     this_passcard_visits = []
-    print(passcode)
     passcard = get_object_or_404(Passcard, passcode=passcode)
-    print(passcard)
-
     for visit in Visit.objects.filter(passcard=passcard):
         entered_at = format_duration(visit.entered_at)
         duration = get_duration(visit.entered_at, visit.leaved_at)

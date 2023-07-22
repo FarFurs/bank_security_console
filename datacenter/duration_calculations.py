@@ -3,10 +3,7 @@ import pytz
 
 
 def is_visit_long(duration):
-    if duration > timedelta(hours=1):
-        return True
-    else:
-        return False
+    return duration > timedelta(hours=1)
 
 
 def get_duration(entered_at, leaved_at):
