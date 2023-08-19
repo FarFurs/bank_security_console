@@ -3,6 +3,10 @@ venv
 *.pyc
 *.pyd
 *.pyo
+.env
+.replit
+*.lock
+*.toml
 .vscode
 .idea
 Thumbs.db
