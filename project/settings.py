@@ -8,12 +8,12 @@ if os.path.exists(dotenv_path):
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'checkpoint.devman.org',
-        'PORT': '5434',
-        'NAME': 'checkpoint',
-        'USER': os.environ["DATABASE_USER"],
-        'PASSWORD': os.environ["DATABASE_PASSWORD"],
+        'ENGINE': os.environ["HOST"],
+        'HOST': os.environ["HOST"],
+        'PORT': os.environ["PORT"],
+        'NAME': os.environ["NAME"],
+        'USER': os.environ["USER"],
+        'PASSWORD': os.environ["PASSWORD"],
     }
 }
 
