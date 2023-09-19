@@ -11,12 +11,12 @@ if os.path.exists(dotenv_path):
 
 DATABASES = {
     'default': {
-        'ENGINE': env("DB_ENGINE"),
-        'HOST': env("DB_HOST"),,
-        'PORT': env("DB_PORT"),,
-        'NAME': env("DB_NAME"),,
-        'USER': env("DB_USER"),,
-        'PASSWORD': env("DB_PASSWORD"),,
+        'ENGINE': env.str("DB_ENGINE", default='django.db.backends.postgresql_psycopg2'),
+        'HOST': env.str("DB_HOST", default='checkpoint.devman.org'),
+        'PORT': env.int("DB_PORT", default=5434),
+        'NAME': env.str("DB_NAME", default='checkpoint'),
+        'USER': env.str("DB_USER", default='guard'),
+        'PASSWORD': env.str("DB_PASSWORD", default='password'),
     }
 }
 
@@ -25,11 +25,11 @@ INSTALLED_APPS = ['datacenter']
 
 SECRET_KEY = env("SECRET_KEY")
 
-DEBUG = env.bool('DEBUG')
+DEBUG = env.bool('DEBUG', default=False)
 
 ROOT_URLCONF = 'project.urls'
 
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default='.localhost')
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
