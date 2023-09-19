@@ -8,13 +8,15 @@
 ### Как установить
 1. Создайте файл .env и все нужные ключи. Вот приммер, как должен выглядеть файл:
 ```sh
-PASSWORD=11111111
-USER=test
-ENGINE=engine
-HOST=host
-PORT=0000
-NAME=name
-SECRET_KEY=key
+DB_PASSWORD=password
+DB_USER=guard
+DB_ENGINE=django.db.backends.postgresql_psycopg2
+DB_HOST=checkpoint.devman.org
+DB_PORT=5434
+DB_NAME=checkpoint
+DEBUG=False
+ALLOWED_HOSTS=.localhost
+SECRET_KEY=some_key
 ```
 2. python3 должен быть установлен. Затем используйте ```pip``` для установки зависимостей
 ```sh
