@@ -1,13 +1,13 @@
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from environs import Env
 
 
-dotenv_path = os.path.join(os.path.split(os.path.dirname(__file__))[0], '.env')
-if os.path.exists(dotenv_path):
-    load_dotenv(dotenv_path)
-    env = Env()
-    env.read_env()
+# dotenv_path = os.path.join(os.path.split(os.path.dirname(__file__))[0], '.env')
+# if os.path.exists(dotenv_path):
+#     load_dotenv(dotenv_path)
+env = Env()
+env.read_env()
 
 DATABASES = {
     'default': {
