@@ -15,8 +15,8 @@ DATABASES = {
         'HOST': env.str("DB_HOST", default='checkpoint.devman.org'),
         'PORT': env.int("DB_PORT", default=5434),
         'NAME': env.str("DB_NAME", default='checkpoint'),
-        'USER': env.str("DB_USER", default='guard'),
-        'PASSWORD': env.str("DB_PASSWORD", default='password'),
+        'USER': env.str("DB_USER", default=''),
+        'PASSWORD': env.str("DB_PASSWORD", default=''),
     }
 }
 
